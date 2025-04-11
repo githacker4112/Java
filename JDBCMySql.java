@@ -14,6 +14,13 @@ public class EmployeDao {
 	Connection con;
 
 	public void connect() throws Exception {
+		/*
+  	Class.forName("org.postgresql.Driver");
+
+        // Connect to PostgreSQL (update your DB name, username, password)
+        con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/tek", "postgres", "your_password");
+        System.out.println("Connection Established with PostgreSQL!");
+  */
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tek", "root", "8284");
 		System.out.println("Connection Established..!");
