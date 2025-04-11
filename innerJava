@@ -1,0 +1,46 @@
+public class Outer {
+
+    int outerVar = 10;
+
+    class Inner { // Non-static Inner Class
+        void show() {
+            System.out.println("Inner class: " + outerVar);
+        }
+    }
+
+    static class StaticInner { // Static Nested Class
+        void show() {
+            System.out.println("Inside static nested class");
+        }
+    }
+
+    void localClassDemo() {
+        class LocalInner { // Local Inner Class
+            void msg() {
+                System.out.println("Inside local inner class");
+            }
+        }
+        new LocalInner().msg();
+    }
+
+    void anonymousClassDemo() {
+        Runnable r = new Runnable() { // Anonymous Inner Class
+            public void run() {
+                System.out.println("Inside anonymous class");
+            }
+        };
+        r.run();
+    }
+
+    public static void main(String[] args) {
+        Outer o = new Outer();
+        Outer.Inner i = o.new Inner();
+        i.show();
+
+        StaticInner s = new StaticInner();
+        s.show();
+
+        o.localClassDemo();
+        o.anonymousClassDemo();
+    }
+}
